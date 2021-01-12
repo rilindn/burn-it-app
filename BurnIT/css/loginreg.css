@@ -89,8 +89,9 @@ body {
 .form-control i {
   visibility: hidden;
   position: absolute;
-  top: 36px;
-  right: 13px;
+  top: 35px;
+  right: -20px;
+  font-size: 14pt;
 }
 .form-control small {
   visibility: hidden;
