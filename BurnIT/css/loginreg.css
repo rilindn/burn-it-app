@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@font-face {
+  font-family: 'OitaW01-CondDemiItalic';
+  src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot'); /* IE9*/
+  src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff2')
+      format('woff2'),
+    /* chrome firefox */
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff')
+      format('woff'),
+    /* chrome firefox */
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.ttf')
+      format('truetype'),
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
+      format('svg'); /* iOS 4.1- */
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.body {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('../photos/login-bg.jpg');
+  background-size: cover;
+}
+
+.container {
+  background-color: #fcf6ef;
+  border-radius: 30px;
+  box-shadow: 2px 5px 5px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  width: 450px;
+  min-height: 350px;
+}
+
+.header {
+  border-bottom: 1px solid #f1710e;
+  background-color: #ffdebb;
+  padding: 20px 40px;
+}
+
+.header h2 {
+  font-size: 23pt;
+  color: #f1710e;
+  margin: 0;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 18px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 2px;
+  font-size: 11pt;
+}
+
+.form-control input {
+  border: 2px solid black;
+  border-radius: 7px;
+  display: block;
+  font-family: inherit;
+  font-size: 19px;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+}
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  top: 36px;
+  right: 13px;
+}
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.form button {
+  background-color: #f1710e;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 7px;
+  color: black;
+  font-size: 12pt;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+.form button:hover {
+  opacity: 0.9;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.form-control.success input {
+  border-color: green;
+}
+.form-control.error input {
+  border-color: red;
+}
+.form-control.success i.fa-check-circle {
+  color: green;
+  visibility: visible;
+}
+.form-control.error i.fa-exclamation-circle {
+  color: red;
+  visibility: visible;
+}
+.form-control.error small {
+  color: red;
+  visibility: visible;
+}
+.sign-up {
+  font-size: 11pt;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-top: -15px;
+  color: black;
+  text-decoration: none;
+}
+.sign-up a {
+  color: rgb(192, 41, 41);
+  text-decoration: none;
+}
+.sign-up a:hover {
+  color: black;
+}
+
+/*footer*/
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(243, 242, 234);
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 14pt;
+}
+.fa {
+  font-size: 25px;
+  width: 50px;
+  text-decoration: none;
+  color: black;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 300px;
+    min-height: 400px;
+  }
+  .footer {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

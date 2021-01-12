@@ -1,0 +1,237 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@font-face {
+  font-family: 'OitaW01-CondDemiItalic';
+  src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot'); /* IE9*/
+  src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff2')
+      format('woff2'),
+    /* chrome firefox */
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff')
+      format('woff'),
+    /* chrome firefox */
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.ttf')
+      format('truetype'),
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
+      format('svg'); /* iOS 4.1- */
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'OitaW01-CondDemiItalic';
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background: #ffffff;
+  height: 80px;
+  width: 100vw;
+}
+.logo-pic {
+  height: 80px;
+  margin-left: 10px;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  padding: 7px 20px;
+  border-radius: 3px;
+  font-size: 15pt;
+  text-transform: uppercase;
+}
+nav ul li a:hover {
+  border-bottom: 3px solid #f1710e;
+  transition: 0.1s;
+}
+#login {
+  padding: 2px 30px;
+  border: 2px solid black;
+  border-radius: 40px;
+}
+#login:hover {
+  background-color: #f1710e;
+  color: black;
+  border: none;
+  font-size: 17pt;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.checkbtn {
+  font-size: 30px;
+  color: #f1710e;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+/*shop*/
+body {
+  background-color: #ffdebb;
+}
+.shop-container h1 {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 40pt;
+  color: #f1710e;
+  background-color: #ffdebb;
+  border-radius: 100px;
+}
+.shop-container h2 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-size: 25pt;
+  color: #f1710e;
+}
+.shop-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+.protein-img {
+  width: 50px;
+}
+.shop {
+  display: flex;
+  flex-direction: row;
+}
+.protein-prod {
+  width: 80px;
+  margin: 30px;
+}
+.prod h3 {
+  font-size: 9pt;
+  font-weight: 500;
+}
+.prod h4 {
+  font-size: 14pt;
+  padding-top: 10px;
+  color: rgb(136, 76, 76);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.equipment-prod {
+  margin: 10px;
+}
+.equipment-img {
+  width: 260px;
+  height: 240px;
+}
+.prod button {
+  width: 80px;
+  height: 30px;
+  margin: 10px;
+  padding: 0;
+  font-size: 10pt;
+  background-color: #f1710e;
+  border: 2px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.prod button:hover {
+  height: 40px;
+  opacity: 0.9;
+  transition: 0.2s;
+  font-size: 11pt;
+  font-weight: bold;
+  cursor: pointer;
+}
+/*footer*/
+
+.footer {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(243, 242, 234);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 14pt;
+}
+.fa {
+  font-size: 25px;
+  width: 50px;
+  text-decoration: none;
+  color: black;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #ffdebb;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 1;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  /* shop */
+  .shop {
+    flex-direction: column;
+    align-items: center;
+  }
+  .protein-prod {
+    width: 150px;
+    margin: 10px;
+  }
+  .shop-container h2 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 20pt;
+  }
+  .shop .prod {
+    border-bottom: 1px solid rgb(136, 136, 136);
+  }
+  .footer {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
