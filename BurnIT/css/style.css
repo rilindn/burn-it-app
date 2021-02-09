@@ -27,77 +27,28 @@ body {
   margin: 0;
   padding: 0;
 }
-nav {
-  background: #ffffff;
-  height: 80px;
-  width: 100vw;
-}
-.logo-pic {
-  height: 80px;
-  margin-left: 10px;
-}
-nav ul {
-  float: right;
-  margin-right: 20px;
-}
-nav ul li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 17px;
-  padding: 7px 20px;
-  border-radius: 3px;
-  font-size: 15pt;
-  text-transform: uppercase;
-}
-nav ul li a:hover {
-  border-bottom: 3px solid #f1710e;
-  transition: 0.1s;
-}
-#login {
-  padding: 2px 30px;
-  border: 2px solid black;
-  border-radius: 40px;
-}
-#login:hover {
-  background-color: #f1710e;
-  color: black;
-  border: none;
-  font-size: 17pt;
-  transition: 0.4s;
-  cursor: pointer;
-}
-.checkbtn {
-  font-size: 30px;
-  color: #f1710e;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-#check {
-  display: none;
-}
 
 /*intro*/
 
 .intro-div {
-  width: 100vw;
+  width: 100%;
+  width: 100%;
   height: 100vh;
 }
 .intro-pic {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 .quote-div {
-  width: 60%;
+  width: 600px;
   position: absolute;
   top: 35%;
   left: 0%;
@@ -136,12 +87,6 @@ nav ul li a:hover {
 }
 
 /*slideshow container*/
-.slideshow-container {
-  width: 100%;
-  height: 800px;
-  position: relative;
-  background-color: #ffdebb;
-}
 .slideshow-title {
   width: 100%;
   height: 200px;
@@ -154,17 +99,20 @@ nav ul li a:hover {
   font-size: 50pt;
   color: #f1710e;
 }
+.slideshow-container {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  background-color: #ffdebb;
+}
 .slider-div {
   width: 100px;
-  height: 400px;
-  width: 500px;
-  margin: 0 auto;
 }
 .prod {
   margin: 0 auto;
 }
 .slideshow-container button {
-  width: 200px;
+  width: 300px;
   height: 300px;
   font-size: 40pt;
   background-color: #ffdebb;
@@ -178,13 +126,20 @@ nav ul li a:hover {
 .back-button {
   position: absolute;
   top: 30%;
-  left: 3%;
+  left: 10%;
 }
 .forward-button {
   position: absolute;
   top: 30%;
-  right: 3%;
+  right: 10%;
 }
+
+.slider-div {
+  height: 400px;
+  width: 500px;
+  margin: 0 auto;
+}
+
 .prod {
   margin: 30px;
   text-align: center;
@@ -309,7 +264,7 @@ nav ul li a:hover {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-height: 1000px;
+  height: 600px;
   background-color: rgb(243, 242, 234);
   display: flex;
   flex-direction: row;
@@ -343,7 +298,6 @@ nav ul li a:hover {
   border-radius: 20px;
   filter: drop-shadow(5px 5px 5px #222);
 }
-/* .contact-form-container */
 .contact-form-container {
   width: 100%;
   height: 400px;
@@ -410,156 +364,4 @@ form textarea {
 }
 .fa:hover {
   opacity: 0.7;
-}
-
-@media only screen and (max-width: 768px) {
-  .checkbtn {
-    display: block;
-  }
-  ul {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: #ffdebb;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all 0.5s;
-    z-index: 1;
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    font-size: 20px;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul {
-    left: 0;
-  }
-  .intro-div {
-    width: 100vw;
-    height: 350px;
-  }
-  .intro-pic {
-    width: 100vw;
-    height: 100%;
-  }
-  .quote-div {
-    width: 100%;
-    height: 250px;
-    top: 16%;
-  }
-  .quote-div h1 {
-    font-size: 24pt;
-  }
-  .quote-div p {
-    margin-top: 10px;
-    font-size: 10pt;
-    color: rgb(255, 255, 255);
-  }
-  .join-us-button {
-    width: 90vw;
-    margin: 10px 20px;
-    bottom: 70%;
-  }
-  .slideshow-container {
-    height: 600px;
-  }
-  .slideshow-title {
-    height: 100px;
-  }
-  .slideshow-title h1 {
-    font-size: 27pt;
-  }
-  .slider-div {
-    width: 100vw;
-  }
-  .slideshow-container button {
-    width: 100px;
-    height: 300px;
-    background-color: transparent;
-  }
-  .slideshow-container button:hover {
-    background-color: transparent;
-  }
-  .slideshow-container button {
-    position: absolute;
-    top: 22%;
-  }
-  .equipment-img {
-    width: 80vw;
-    height: 300px;
-  }
-  .prod button {
-    display: none;
-  }
-  .workout-classes-title {
-    height: 130px;
-  }
-  .workout-classes-title h1 {
-    font-size: 27pt;
-    text-align: center;
-  }
-  .inner-workout {
-    display: flex;
-    flex-direction: column;
-    height: 700px;
-    padding: 10px;
-  }
-  .workout-classes-container img {
-    width: 250px;
-    height: 250px;
-  }
-  .inner-workout-text {
-    width: 90vw;
-    text-align: center;
-  }
-  .inner-workout-text p {
-    text-align: center;
-  }
-  /*about us container*/
-  .about-us-container {
-    width: 100vw;
-    height: 120em;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  .second-inner {
-    width: 100vw;
-    height: 500px;
-    text-align: center;
-  }
-  /* .contact-form-container */
-  .contact-form-container {
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-  }
-  .contact-form-container form {
-    width: 100vw;
-    text-align: center;
-  }
-  form input {
-    width: 150px;
-  }
-  form textarea {
-    width: 327px;
-    margin-top: 10px;
-    margin-left: 0;
-  }
-
-  .footer {
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
 }

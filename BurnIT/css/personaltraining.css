@@ -17,7 +17,6 @@
       url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
       format('svg'); /* iOS 4.1- */
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -29,62 +28,6 @@ body {
   margin: 0;
   padding: 0;
 }
-nav {
-  background: #ffffff;
-  height: 80px;
-  width: 100vw;
-}
-.logo-pic {
-  height: 80px;
-  margin-left: 10px;
-}
-nav ul {
-  float: right;
-  margin-right: 20px;
-}
-nav ul li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 17px;
-  padding: 7px 20px;
-  border-radius: 3px;
-  font-size: 15pt;
-  text-transform: uppercase;
-}
-nav ul li a:hover {
-  border-bottom: 3px solid #f1710e;
-  transition: 0.1s;
-}
-#login {
-  padding: 2px 30px;
-  border: 2px solid black;
-  border-radius: 40px;
-}
-#login:hover {
-  background-color: #f1710e;
-  color: black;
-  border: none;
-  font-size: 17pt;
-  transition: 0.4s;
-  cursor: pointer;
-}
-.checkbtn {
-  font-size: 30px;
-  color: #f1710e;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-#check {
-  display: none;
-}
 
 /*body*/
 body {
@@ -94,21 +37,23 @@ body {
 .photo-div {
   width: 100%;
   height: 100vh;
-}
-.first-container {
-  width: 100%;
-  height: 700px;
-  color: aliceblue;
   background-image: url('../photos/personal-training.png');
   background-attachment: fixed;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  filter: brightness(0.34);
+}
+.first-container {
+  width: 800px;
+  height: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -20%);
+  color: aliceblue;
 }
 .intro-div {
-  width: 90%;
+  width: 800px;
   color: aliceblue;
   text-align: center;
 }
@@ -122,38 +67,32 @@ body {
   font-size: 13pt;
 }
 .programes-div {
-  width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
 }
 .first-ul {
   padding-right: 70px;
 }
-.first-ul span p,
-.second-ul span p {
+.first-ul ul li p,
+.second-ul ul li {
   font-size: 13pt;
 }
-.first-ul span,
-.second-ul span p {
+.first-ul ul li,
+.second-ul ul li {
   list-style: none;
-  padding: 0;
+  padding: 3px;
 }
-.first-ul span h1,
-.second-ul span h1 {
-  font-size: 35pt;
+.first-ul ul li h1,
+.second-ul ul li h1 {
+  font-size: 30pt;
   border-bottom: 2px solid white;
   color: #f1710e;
 }
-.first-ul span h2 {
-  font-size: 15pt;
+.first-ul ul li h2 {
   color: #f1710e;
 }
-.trainers-div {
-  width: 100vw;
-}
 .trainers-inner {
-  width: 100%;
+  max-width: 100%;
   height: 400px;
   display: flex;
   flex-direction: row;
@@ -161,7 +100,7 @@ body {
 }
 .trainers-div div h1 {
   text-align: center;
-  padding: 10px;
+  padding: 30px;
   font-size: 40pt;
   color: #f1710e;
 }
@@ -172,11 +111,8 @@ body {
   padding: 20px;
   margin-left: 20px;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-.trainer span {
+.trainers-div div ul li {
   list-style: none;
   text-align: center;
   padding: 5px;
@@ -219,89 +155,4 @@ body {
 }
 .fa:hover {
   opacity: 0.7;
-}
-@media only screen and (max-width: 768px) {
-  .checkbtn {
-    display: block;
-  }
-  ul {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: #ffdebb;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all 0.5s;
-    z-index: 1;
-  }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  nav ul li a {
-    font-size: 20px;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul {
-    left: 0;
-  }
-  .first-container {
-    width: 100vw;
-    height: 1100px;
-  }
-  .intro-div h1 {
-    font-size: 20pt;
-  }
-  .first-ul span h1,
-  .second-ul span h1 {
-    font-size: 20pt;
-  }
-  .first-ul span p,
-  .second-ul span p {
-    font-size: 12pt;
-  }
-  .first-ul span p {
-    border-bottom: 1px solid rgb(165, 165, 165);
-    padding: 10px;
-  }
-  .programes-div {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    text-align: center;
-  }
-  .first-ul {
-    padding: 0;
-  }
-  .trainers-div {
-    height: 1400px;
-  }
-  .trainer {
-    width: 180px;
-    height: 180px;
-    margin: 20px;
-  }
-  .trainer span img {
-    width: 100px;
-  }
-  .trainers-inner {
-    height: 1300px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .trainers-div div h1 {
-    border-bottom: 2px solid #f1710e;
-  }
-  .footer {
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
 }
