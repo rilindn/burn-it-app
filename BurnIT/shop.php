@@ -31,7 +31,7 @@
           <img src="photos/synthapro.jpg" alt="" />
           <h3>Syntha-6 Protein Powder, 5 Lbs.</h3>
           <h4>
-            56.98
+            56.99
             <sub>EUR</sub>
           </h4>
           <a href=""><button>Add to Cart</button></a>
