@@ -6,18 +6,14 @@
   src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot'); /* IE9*/
   src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot?#iefix')
       format('embedded-opentype'),
-    /* IE6-IE8 */
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff2')
+    url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff2')
       format('woff2'),
-    /* chrome firefox */
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff')
+    url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff')
       format('woff'),
-    /* chrome firefox */
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.ttf')
+    url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.ttf')
       format('truetype'),
-    /* chrome firefox opera Safari, Android, iOS 4.2+*/
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
-      format('svg'); /* iOS 4.1- */
+    url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
+      format('svg');
 }
 
 * {
@@ -44,28 +40,27 @@ body {
   border-radius: 30px;
   box-shadow: 2px 5px 5px rgba(255, 255, 255, 0.3);
   overflow: hidden;
-  width: 450px;
-  min-height: 350px;
+  width: 400px;
+  min-height: 250px;
 }
 
 .header {
   border-bottom: 1px solid #f1710e;
   background-color: #ffdebb;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 
 .header h2 {
-  font-size: 23pt;
+  font-size: 18pt;
   color: #f1710e;
   margin: 0;
 }
 
 .form {
-  padding: 30px 40px;
+  padding: 15px 40px;
 }
 
 .form-control {
-  margin-bottom: 10px;
   padding-bottom: 18px;
   position: relative;
 }
@@ -73,7 +68,7 @@ body {
 .form-control label {
   display: inline-block;
   margin-bottom: 2px;
-  font-size: 11pt;
+  font-size: 10pt;
 }
 
 .form-control input {
@@ -83,13 +78,13 @@ body {
   font-family: inherit;
   font-size: 19px;
   padding: 10px;
-  height: 40px;
+  height: 35px;
   width: 100%;
 }
 .form-control i {
   visibility: hidden;
   position: absolute;
-  top: 35px;
+  top: 32px;
   right: -20px;
   font-size: 14pt;
 }
@@ -105,9 +100,9 @@ body {
   border-radius: 7px;
   color: black;
   font-size: 12pt;
-  margin-top: 10px;
   padding: 10px;
   width: 100%;
+  height: 40px;
 }
 .form button:hover {
   opacity: 0.9;
@@ -136,8 +131,8 @@ body {
 .sign-up {
   font-size: 11pt;
   text-align: center;
-  padding-bottom: 15px;
-  margin-top: -15px;
+  margin-bottom: 10px;
+  margin-top: -7px;
   color: black;
   text-decoration: none;
 }

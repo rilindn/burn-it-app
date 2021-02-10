@@ -6,8 +6,6 @@ form.addEventListener('submit', event=>{
     event.preventDefault();
     checkInputs();
 });
-var usernameRegex = /^[a-zA-Z0-9]+$/;
-var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 function  checkInputs(){
     const usernameValue = username.value;
     const passwordValue = password.value;
@@ -15,17 +13,11 @@ function  checkInputs(){
 
         setErrorFor(username,'Username cannot be empty!');
     }
-    else if (!usernameRegex.test(usernameValue)){
-        setErrorFor(username,'Username not valid!');
-    }
     else{
         setSuccessFor(username);
     }
     if (passwordValue == ''){
         setErrorFor(password,'Password cannot be empty!');
-    }
-    else if (!passwordRegex.test(passwordValue)){
-        setErrorFor(password,'Password not valid!');
     }
     else{
         setSuccessFor(password);
