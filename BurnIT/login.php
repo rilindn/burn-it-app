@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +29,7 @@
         <div class="header">
           <h2>Login</h2>
         </div>
-        <form class="form" id="form">
+        <form id="form" class="form" name="loginForm" action="businessLogic/loginVerify.php" method="POST">
           <div class="form-control">
             <label for="username">Username</label>
             <input
@@ -49,7 +54,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <small></small>
           </div>
-          <button>Log in</button>
+          <button type="submit" name='login-btn' value="Login">Log in</button>
         </form>
         <div class="sign-up">
           <a href="register.php">Not a member yet? Sign up now!</a>
@@ -57,23 +62,7 @@
           <a href="index.php">Return to Home!</a>
         </div>
       </div>
-      <footer>
-        <div class="footer">
-          <div>
-            <small>
-              <b>BurnIt</b>
-              .© 2020 Daily Burn, Inc. All rights reserved
-            </small>
-          </div>
-          <div>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-youtube"></a>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="js/login.js"></script>
-  </body>
-</html>
+      <script src="js/loginValidate.js"></script>
+      <?php 
+        include 'components/footer.php';
+      ?>

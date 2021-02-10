@@ -47,7 +47,7 @@ body {
   color: #f1710e;
 }
 .shop-container {
-  width: 60%;
+  max-width: 63%;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -58,7 +58,8 @@ body {
 }
 .shop {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .protein-prod {
   width: 80px;
@@ -91,6 +92,7 @@ body {
   border: 2px solid black;
   border-radius: 20px;
   cursor: pointer;
+  outline: none;
 }
 .prod button:hover {
   height: 40px;

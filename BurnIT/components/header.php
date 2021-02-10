@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  require_once 'businessLogic/cartMapper.php';
+  require_once 'businessLogic/userMapper.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,5 +40,16 @@
       <li><a href="shop.php">Shop</a></li>
       <li><a href="personaltraining.php">Personal Training</a></li>
       <li><a id="login" href="login.php">Log in</a></li>
+      <?php
+      if(!isset($_SESSION['role'])){
+            echo '<li><a id="login" href="login.php">Log in</a></li>';
+          }
+          if(isset($_SESSION['role'])&& $_SESSION['role']=='1'){
+            echo '<li><a id="dashboard" href="dashboard.php">Dashboard</a></li>';
+          }
+          if (isset($_SESSION["role"])) {
+            echo '<li><a id="login" href="businessLogic/logout.php">Log out</a></li>';
+          }
+      ?>
     </ul>
   </nav>
