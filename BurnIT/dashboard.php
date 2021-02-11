@@ -40,6 +40,74 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 </tbody>
             </table>
         </div>
+        <<div id="products" style="display:none">
+            <div>
+            <h2 class="list-title">Product list</h2>
+              <table>
+                  <thead>
+                    <tr>
+                          <td>Name</td>
+                            <td>Photo</td>
+                            <td>Price</td>
+                            <td>Type</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                    foreach ($productList as $product) {
+                        echo '<tr>';
+                        echo  '<td>'.$product['prodEmri'].'</td>';
+                        echo  '<td><img class="list-photos" src="../photos/'.$product['prodPhoto'].'"/></td>';
+                        echo  '<td>'.$product['prodCmimi'].' EUR</td>';
+                        echo  '<td>'.$product['prodType'].'</td>';
+                        echo  '<td><a href= "../businessLogic/productLogic/deleteProduct.php?id='.$product['prodid'].'">Delete</td>';
+                        echo  '</tr>';
+                      }
+                    ?>
+                  </tbody>
+              </table>
+            </div>
+            <div class="form-div">
+            <h2 class="list-title register-title">Register new product</h2>
+              <form id="formProduct" class="formR" action="../businessLogic/productLogic/productAdmit.php" method="POST" >
+                   <div class="form-control">
+                     <label for="emri">Name</label>
+                     <br>
+                     <input
+                       type="text"
+                       name="emri"
+                       id="emri"
+                       class="input-field"
+                     />
+                   </div>
+                   <div class="form-control">
+                     <label for="image">Photo</label><br>
+                     <input type="file" name="image" id="image" class="input-field" />
+
+                   </div>
+                   <div class="form-control">
+                     <label for="price">Price</label><br>
+                     <input
+                       type="double"
+                       name="cmimi"
+                       id="price"
+                       class="input-field"
+                     />
+                   </div>
+                   <div class="form-control-select">
+                   <label for="type">Type</label><br>
+                   <input type="radio" id="protein" name="type" value="Protein" checked="checked">
+                   <label for="protein">Protein</label>
+                   <input type="radio" id="weightlifting" name="type" value="WeightLifting">
+                   <label for="weightlifting">Weight Lifting</label>
+                   <input type="radio" id="cardio" name="type" value="Cardio">
+                   <label for="cardio">Cardio</label>
+                    </div>
+                   <br>
+                   <button type="submit" name='register-prod' value="register">Register product</button>   
+                  </form>
+            </div>
+        </div>
     </div>
 </div>
 <?php 
