@@ -65,5 +65,19 @@ class UserMapper extends DatabasePDOConfiguration
         $statement->bindParam(":role", $role);
         $statement->execute();
     }
+    public function deleteUser($userId)
+    {
+        $this->query = "delete from user where userid=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $userId);
+        $statement->execute();
+    }
 
+    public function makeAdmin($userId)
+    {
+        $this->query = "UPDATE user SET role='1' WHERE userid=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $userId);
+        $statement->execute();
+    }
 }
