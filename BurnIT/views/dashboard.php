@@ -108,6 +108,77 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                   </form>
             </div>
         </div>
+        <div id="trainers" style="display:none">
+      <div>
+            <h2 class="list-title">Trainer list</h2>
+        <table>
+                <thead>
+                      <tr>
+                        <td>Name</td>
+                        <td>Photo</td>
+                        <td>Age</td>
+                        <td>Qualification</td>
+                        
+                      </tr>
+                  </thead>
+                
+                  <tbody>
+                  <?php
+                  $mapper = new TrainerMapper();
+                  $trainers = $mapper->getAllTrainers();
+                foreach ($trainers as $trainer) {
+                    echo '<tr>';
+                    echo  '<td>'.$trainer['name'].'</td>';
+                    echo  '<td><img class="list-photos" src="../photos/'.$trainer['photo'].'"/></td>';
+                    echo  '<td>'.$trainer['age'].'</td>';
+                    echo  '<td>'.$trainer['qualification'].'</td>';
+                    echo  '<td><a href= "../trainerLogic/deleteTrainer.php?id='.$trainer['trainerid'].'">Delete</td>';
+                    echo  '</tr>';
+                  
+                }
+                ?>
+                  </tbody>
+                </table>
+            </div>
+      <div class="form-div">
+      <h2 class="list-title register-title">Register new trainer</h2>
+        <form id="formTrainer" class="formR" action="../trainerLogic/newTrainer.php" method="POST" >
+          <div class="form-control">
+            <label for="name">Name</label><br>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="input-field"
+            />
+          </div>
+          <div class="form-control">
+            <label for="image">Photo</label><br>
+            <input type="file" name="image" id="image" class="input-field" />
+            
+          </div>
+          <div class="form-control">
+            <label for="age">Age</label><br>
+            <input
+              type="int"
+              name="age"
+              id="age"
+              class="input-field"
+            />
+          </div>
+          <div class="form-control-select">
+          <label for="qualification">Qualification</label><br>
+          <input type="radio" id="Trainer" name="qualification" value="Trainer" checked="checked">
+          <label for="Trainer">Trainer</label>
+          <input type="radio" id="Master Teacher" name="qualification" value="Master Teacher" >
+          <label for="protein">Master Teacher</label><br>
+          <br>
+              </div>
+          <button type="submit" name='register-trainer' value="register">Register trainer</button>
+        </form>
+        </div>
+        
+        </div>
     </div>
 </div>
 <?php 
