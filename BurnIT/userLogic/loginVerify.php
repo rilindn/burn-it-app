@@ -13,7 +13,7 @@ else if (isset($_POST['register-btn'])) {
     $register->insertData();
 } 
 else {
-    header("Location:../index.php");
+    header("Location:../views/index.php");
 }
 
 class LoginLogic
@@ -30,14 +30,14 @@ class LoginLogic
     public function verifyData()
     {
         if ($this->variablesNotDefinedWell($this->username, $this->password)) {
-            header("Location:../login.php");
+            header("Location:../views/login.php");
         } 
         else if ($this->dataCorrect($this->username, $this->password)) {
             $_SESSION['userName'] =$this->username;
-            header('Location:../index.php');
+            header('Location:../views/index.php');
         } 
         else {
-            header("Location:../login.php");
+            header("Location:../views/login.php");
         }
     }
 
@@ -94,8 +94,8 @@ class RegisterLogic
             $mapper = new UserMapper();
             $mapper->insertUser($user);
             if($this->usernameAndPasswordCorrect($this->username,$this->password)){
-                header('Location:../index.php');
-                alert("You have been registered succesfully!");
+                $_SESSION['userName'] =$this->username;
+                header('Location:../views/index.php');
             }
         }
     }

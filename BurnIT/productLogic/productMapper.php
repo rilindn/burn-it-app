@@ -1,5 +1,5 @@
 <?php
-require_once "databaseConfig.php";
+include_once "../dbConfig/databaseConfig.php";
 
 class ProdMapper extends DatabasePDOConfiguration
 {

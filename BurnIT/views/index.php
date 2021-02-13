@@ -1,12 +1,12 @@
 <?php 
-        include 'components/header.php';
+        include '../components/header.php';
     ?>
     <head>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
     </head>
   <body>
     <div class="intro-div">
-      <img src="photos/cover-ph1.jpg" alt="" class="intro-pic" />
+      <img src="../photos/cover-ph1.jpg" alt="" class="intro-pic" />
       <div class="quote-div">
         <h1>
           Eat. Sleep. Burn It.
@@ -32,7 +32,7 @@
       <div class="slider-div">
         <div class="slide fade">
           <div class="product7 prod">
-            <img src="photos/IntegritySe.jpg" alt="" class="equipment-img" />
+            <img src="../photos/IntegritySe.jpg" alt="" class="equipment-img" />
             <h3>Club Series + Upright Lifecycle® Bike</h3>
             <h4>
               999.99
@@ -43,7 +43,7 @@
         </div>
         <div class="slide fade">
           <div class="product8 prod">
-            <img src="photos/PCS-UprightBi.jpg" alt="" class="equipment-img" />
+            <img src="../photos/PCS-UprightBi.jpg" alt="" class="equipment-img" />
             <h3>Platinum Club Series Lifecycle Exercise Bike</h3>
             <h4>
               729.99
@@ -54,7 +54,7 @@
         </div>
         <div class="slide fade">
           <div class="product15 prod">
-            <img src="photos/DumbbellR2.jpg" alt="" class="equipment-img" />
+            <img src="../photos/DumbbellR2.jpg" alt="" class="equipment-img" />
             <h3>Hammer Strength Two-Tier Dumbbell Rack</h3>
             <h4>
               999.99
@@ -67,7 +67,7 @@
         <div class="slide fade">
           <div class="product12 prod">
             <img
-              src="photos/Hammer-Strength-Assist-Dip-Chin-M[1].jpg"
+              src="../photos/Hammer-Strength-Assist-Dip-Chin-M[1].jpg"
               alt=""
               class="equipment-img"
             />
@@ -82,7 +82,7 @@
         <div class="slide fade">
           <div class="product9 prod">
             <img
-              src="photos/CPO-Treadmill-M[1].jpg"
+              src="../photos/CPO-Treadmill-M[1].jpg"
               alt=""
               class="equipment-img"
             />
@@ -104,7 +104,7 @@
         <h1>What Happens in our Classes.</h1>
       </div>
       <div class="inner-workout inner-workout1">
-        <div><img src="photos/strength-training.jpg" alt="" /></div>
+        <div><img src="../photos/strength-training.jpg" alt="" /></div>
         <div class="inner-workout-text">
           <h1>Strength Training.</h1>
           <p>
@@ -123,10 +123,10 @@
             alternates to the treadmill.
           </p>
         </div>
-        <div><img src="photos/cardio-training.jpg" alt="" /></div>
+        <div><img src="../photos/cardio-training.jpg" alt="" /></div>
       </div>
       <div class="inner-workout inner-workout3">
-        <div><img src="photos/yoga-classes.jpeg" alt="" /></div>
+        <div><img src="../photos/yoga-classes.jpeg" alt="" /></div>
         <div class="inner-workout-text">
           <h1>Yoga.</h1>
           <p>
@@ -140,7 +140,7 @@
     </div>
     <div class="about-us-container">
       <div class="first-inner">
-        <img src="photos/weight-light.png" alt="" />
+        <img src="../photos/weight-light.png" alt="" />
       </div>
       <div class="second-inner">
         <h1>ABOUT THE GYM</h1>
@@ -154,7 +154,7 @@
         </p>
       </div>
       <div class="third-inner">
-        <img src="photos/girl-training.png" alt="" />
+        <img src="../photos/girl-training.png" alt="" />
       </div>
     </div>
     <div class="contact-form-container">
@@ -183,7 +183,7 @@
         </div>
       </form>
     </div>
-    <script src="js/index.js"></script>
+    <script src="../js/index.js"></script>
     <?php 
-        include 'components/footer.php';
+        include '../components/footer.php';
     ?>

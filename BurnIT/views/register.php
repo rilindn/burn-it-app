@@ -11,8 +11,8 @@ session_start();
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="icon" href="photos/icon.jpg" />
-    <link rel="stylesheet" href="css/loginreg.css" />
+    <link rel="icon" href="../photos/icon.jpg" />
+    <link rel="stylesheet" href="../css/loginreg.css" />
     <title>Register</title>
   </head>
   <body>
@@ -21,7 +21,7 @@ session_start();
         <div class="header">
           <h2>Create Account</h2>
         </div>
-  <form id="form" class="form" action="businessLogic/loginVerify.php" method="POST">
+  <form id="form" class="form" action="../userLogic/loginVerify.php" method="POST">
           <div class="form-control">
             <label for="username">Username</label>
             <input
@@ -69,7 +69,7 @@ session_start();
         </div>
       </div>
       
-    <script src="js/registerValidate.js"></script>
+    <script src="../js/registerValidate.js"></script>
       <?php 
-        include 'components/footer.php';
+        include '../components/footer.php';
       ?>

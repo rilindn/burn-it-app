@@ -4,28 +4,40 @@ const password = document.getElementById('password')
 const email= document.getElementById('email')
 const password2= document.getElementById('password2')
 
-form.addEventListener('submit', event=>{
-    event.preventDefault();
-    checkInputs();
+form.addEventListener('submit',event=>{
+
+    if(!checkInputs()){
+        event.preventDefault();
+        checkInputs();
+    }
 });
+var usernameRegex = /^[a-zA-Z0-9]+$/;
+var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
 function  checkInputs(){
     const usernameValue = username.value;
     const passwordValue = password.value;
     const emailValue = email.value;
     const password2Value = password2.value;
     if (usernameValue == ''){
-
         setErrorFor(username,'Username cannot be empty!');
+        return false;
+    }
+    else if (!usernameRegex.test(usernameValue)){
+        setErrorFor(username,'Username not valid!');
+        return false;
     }
     else{
         setSuccessFor(username);
     }
-
+  
     if (emailValue == ''){
         setErrorFor(email,'Email cannot be empty!');
+        return false;
     }
     else if (!isEmail(emailValue)) {
         setErrorFor(email, 'Not a valid email');
+        return false;
     }
     else{
         setSuccessFor(email);
@@ -33,6 +45,11 @@ function  checkInputs(){
 
     if (passwordValue == ''){
         setErrorFor(password,'Password cannot be empty!');
+        return false;
+    }
+    else if (!passwordRegex.test(passwordValue)){
+        setErrorFor(password,'Password not valid!');
+        return false;
     }
     else{
         setSuccessFor(password);
@@ -40,12 +57,15 @@ function  checkInputs(){
 
     if (password2Value == ''){
         setErrorFor(password2,'Password check cannot be empty!');
+        return false;
     }
     else if(passwordValue !== password2Value) {
         setErrorFor(password2, 'Passwords does not match');
+        return false;
     }
     else{
         setSuccessFor(password2);
+        return true;
     }
 }
 function setErrorFor(input,message){
@@ -63,29 +83,4 @@ function setSuccessFor(input){
 
 function isEmail(email) {
 	return /^\S+@\S+\.\S+$/.test(email);
-}
-
-var elementList= document.getElementsByClassName('input-field');
-
-  for(var i=0; i<elementList.length;i++){
-      elementList[i].addEventListener('keyup',function(event){
-        event.preventDefault();
-
-        loginObj={
-          ...loginObj,
-          [event.target.name]:event.target.value
-        }
-        console.log(loginObj)
-      })
-    }
-var usernameValue1 = '';
-var emailValue1 = '';
-var passwordValue1 = '';
-var password2Value1 = '';
-
-var loginObj = {
-  username:"",
-  email:"",
-  password:"",
-  password2:""
 }

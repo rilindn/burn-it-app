@@ -8,5 +8,5 @@ if (isset($_GET['cartid'])&& isset($_GET['pageurl'])) {
     $page = $_GET['pageurl'];
     $mapper = new CartMapper();
     $mapper->deleteFromCart($prodId);
-    header("Location:../views/shop.php");
+    header("Location:$page");
 }

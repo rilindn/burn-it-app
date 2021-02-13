@@ -16,7 +16,8 @@
     /* chrome firefox opera Safari, Android, iOS 4.2+*/
       url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
       format('svg'); /* iOS 4.1- */
-}* {
+}
+* {
   margin: 0;
   padding: 0;
   font-family: 'OitaW01-CondDemiItalic';
@@ -26,11 +27,9 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-/*shop*/
-body {
   background-color: #ffdebb;
 }
+/*shop*/
 .shop-container h1 {
   text-align: center;
   margin: 40px 0;
@@ -122,4 +121,35 @@ body {
 }
 .fa:hover {
   opacity: 0.7;
+}
+@media only screen and (max-width: 768px) {
+  /* shop */
+  .shop {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .protein-prod {
+    width: 150px;
+    margin: 10px;
+  }
+  .shop-container h2 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 20pt;
+  }
+  .equipment-img {
+    width: 200px;
+    height: 200px;
+  }
+  .shop .prod {
+    border-bottom: 1px solid rgb(136, 136, 136);
+  }
+  .footer {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }

@@ -6,13 +6,14 @@ class Admin extends Person
 {
     public function __construct($username,$email,$password,$role)
     {
-        parent::__construct($username,$email,$password,$role); //equivalent to super in java
+        parent::__construct($username,$email,$password,$role);
     }
 
 
     public function setSession()
     {
         $_SESSION["role"] = 1;
+        $_SESSION['userName'] = $username;
     }
 
     public function setCookie()

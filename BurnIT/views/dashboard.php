@@ -1,46 +1,61 @@
 <?php
-include 'components/header.php';
-require_once 'businessLogic/userMapper.php';
+include '../components/header.php';
+require_once '../userLogic/userMapper.php';
+require_once '../productLogic/productMapper.php';
+require_once '../trainerLogic/trainerMapper.php';
 if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     $mapper =  new UserMapper();
     $userList = $mapper->getAllUsers();
 } else {
     header("Location:dashboard.php");
 }
+$mapper =  new ProdMapper();
+$productList = $mapper->getAllProducts();
+$cartProd = new CartMapper();
+$cartproducts =  $cartProd->getAllProducts();
 ?>
 <head>
-    <link rel="stylesheet" href="css/dashboard.css" type="text/css" />
+    <link rel="stylesheet" href="../css/dashboard.css" type="text/css" />
     </head>
 <div class="dash-container">
+
+    <div class="dash-selector">
+      <ul>
+        <li id="clicker1" ><a href="" onclick="showDiv(1)" ><h4>User list</h4></a></li>
+        <li id="clicker2" ><a href="" onclick="showDiv(2)" ><h4>Product List</h4></a></li>
+        <li id="clicker3" ><a href="" onclick="showDiv(3)" ><h4>Cart Product List</h4></a></li>
+        <li id="clicker4" ><a href="" onclick="showDiv(4)" ><h4>Trainers</h4></a></li>
+        </ul>
+    </div>
     <div class="inner-dash-container" >
-        <div id="userlist" class="">
-            <h2 class="list-title">User list:</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <td>Username</td>
-                        <td>Email</td>
-                        <td>Promote to Admin</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                     foreach ($userList as $user) {
-                        if($user['role']==0){
-                            echo '<tr>';
-                            echo  '<td>'.$user['userName'].'</td>';
-                            echo  '<td>'.$user['userEmail'].'</td>';
-                            echo  '<td><a href= "businessLogic/promoteToAdmin.php?id='.$user['userid'].'">Promote</td>';
-                            echo  '<td><a href= "businessLogic/deleteUser.php?id='.$user['userid'].'">Delete</td>';
-                            echo  '</tr>';
-                            }
+        <div id="userlist" class="" style="display:block">
+        <h2 class="list-title">User list:</h2>
+          <table>
+            <thead>
+                <tr>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>Promote to Admin</td>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($userList as $user) {
+                  if($user['role']==0){
+                    echo '<tr>';
+                    echo  '<td>'.$user['userName'].'</td>';
+                    echo  '<td>'.$user['userEmail'].'</td>';
+                    echo  '<td><a href= "../userLogic/promoteToAdmin.php?id='.$user['userid'].'">Promote</td>';
+                    echo  '<td><a href= "../userLogic/deleteUser.php?id='.$user['userid'].'">Delete</td>';
+                    echo  '</tr>';
+                  }
                   
-                        }
-                    ?>
-                </tbody>
-            </table>
+                }
+                ?>
+            </tbody>
+          </table>
         </div>
-        <<div id="products" style="display:none">
+        <div id="products" style="display:none">
             <div>
             <h2 class="list-title">Product list</h2>
               <table>
@@ -60,7 +75,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                         echo  '<td><img class="list-photos" src="../photos/'.$product['prodPhoto'].'"/></td>';
                         echo  '<td>'.$product['prodCmimi'].' EUR</td>';
                         echo  '<td>'.$product['prodType'].'</td>';
-                        echo  '<td><a href= "../businessLogic/productLogic/deleteProduct.php?id='.$product['prodid'].'">Delete</td>';
+                        echo  '<td><a href= "../productLogic/deleteProduct.php?id='.$product['prodid'].'">Delete</td>';
                         echo  '</tr>';
                       }
                     ?>
@@ -69,7 +84,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
             </div>
             <div class="form-div">
             <h2 class="list-title register-title">Register new product</h2>
-              <form id="formProduct" class="formR" action="../businessLogic/productLogic/productAdmit.php" method="POST" >
+              <form id="formProduct" class="formR" action="../productLogic/productAdmit.php" method="POST" >
                    <div class="form-control">
                      <label for="emri">Name</label>
                      <br>
@@ -108,7 +123,38 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                   </form>
             </div>
         </div>
-        <div id="trainers" style="display:none">
+
+        <div id="cartProdList" class="" style="display:none">
+                <h2 class="list-title">Cart product list</h2>
+                <table>
+                  <thead>
+                      <tr>
+                        <td>Purchaser Username</td>
+                        <td>Product Name</td>
+                        <td>Photo</td>
+                        <td>Price</td>
+                        
+                      </tr>
+                  </thead>
+                
+                  <tbody>
+                <?php
+                foreach ($cartproducts as $cProd) {
+                        $um =  new UserMapper();
+                        $user = $um->getUserNameById($cProd['userid']);
+                        echo '<td>'.$user.'</td>';
+                        echo  '<td>'.$cProd['prodEmri'].'</td>';
+                        echo  '<td><img class="list-photos" src="../photos/'.$cProd['prodPhoto'].'"/></td>';
+                        echo  '<td>'.$cProd['prodCmimi'].'</td>';
+                        echo  '<td><a href= "../cartLogic/deleteFromCart.php?cartid='.$cProd['cartid'].'&&pageurl='.$_SERVER['PHP_SELF'].'">Delete</td>';
+                        echo  '</tr>';
+                  }
+                ?>
+                  </tbody>
+                </table>
+      </div>
+      
+      <div id="trainers" style="display:none">
       <div>
             <h2 class="list-title">Trainer list</h2>
         <table>
@@ -127,7 +173,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                   $mapper = new TrainerMapper();
                   $trainers = $mapper->getAllTrainers();
                 foreach ($trainers as $trainer) {
-                    echo '<tr>';
+                    echo  '<tr>';
                     echo  '<td>'.$trainer['name'].'</td>';
                     echo  '<td><img class="list-photos" src="../photos/'.$trainer['photo'].'"/></td>';
                     echo  '<td>'.$trainer['age'].'</td>';
@@ -182,7 +228,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     </div>
 </div>
 <?php 
-  include 'components/footer.php';
+  include '../components/footer.php';
 ?>
+<script src="../js/dashboard.js"></script>
 
 

@@ -1,8 +1,8 @@
 <?php 
-        include 'components/header.php';
+        include '../components/header.php';
     ?>
     <head>
-    <link rel="stylesheet" href="css/memberships.css" type="text/css" />
+    <link rel="stylesheet" href="../css/memberships.css" type="text/css" />
     </head>
   <body>
     <div class="pricing-container">
@@ -90,5 +90,5 @@
     </div>
 
     <?php 
-        include 'components/footer.php';
+        include '../components/footer.php';
     ?>

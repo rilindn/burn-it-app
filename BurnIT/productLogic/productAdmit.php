@@ -8,7 +8,7 @@ if (isset($_POST['register-prod'])) {
     $register->insertProd();
 } 
 else {
-    header("Location:../dashboard.php");
+    header("Location:../views/dashboard.php");
 }
 
 class RegisterProd
@@ -33,7 +33,7 @@ class RegisterProd
             $mapper = new ProdMapper();
             $prod = new Product($this->emri,$this->photo,$this->cmimi,$this->type);
             $mapper->insertProduct($prod);
-            header('Location:../dashboard.php');
+            header('Location:../views/dashboard.php');
         }
     }
     

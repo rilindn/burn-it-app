@@ -1,5 +1,5 @@
 <?php
-require_once "databaseConfig.php";
+include_once "../dbConfig/databaseConfig.php";
 
 class UserMapper extends DatabasePDOConfiguration
 {
@@ -10,6 +10,17 @@ class UserMapper extends DatabasePDOConfiguration
     public function __construct()
     {
         $this->conn = $this->getConnection();
+    }
+
+    
+    public function getLogedInUserId($username){
+
+        $this->query = "select * from user where userName=:username LIMIT 1";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":username", $username);
+        $statement->execute();
+        $result = $statement->fetch();
+        return $result;
     }
 
     public function getUserByID($userId)
@@ -65,6 +76,7 @@ class UserMapper extends DatabasePDOConfiguration
         $statement->bindParam(":role", $role);
         $statement->execute();
     }
+
     public function deleteUser($userId)
     {
         $this->query = "delete from user where userid=:id";

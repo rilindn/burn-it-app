@@ -1,9 +1,9 @@
 <?php 
-        include 'components/header.php';
-        include 'components/trainers.php';
+        include '../components/header.php';
+        include_once '../trainerLogic/trainerMapper.php';
     ?>
     <head>
-    <link rel="stylesheet" href="css/personaltraining.css" type="text/css" />
+    <link rel="stylesheet" href="../css/personaltraining.css" type="text/css" />
     </head>
   <body>
     <div class="first-container">
@@ -73,16 +73,19 @@
       <div class="trainers-inner">
 
         <?php
+        $mapper = new TrainerMapper();
+        $trainers = $mapper->getAllTrainers();
            foreach($trainers as $trainer){
              echo '<div class="trainer">';
-             echo '<span><img src="'.$trainer['Foto'].'" alt="" /></span>';
-             echo '<span><h3>'.$trainer['Pershkrimi'].'</h3></span>';
+             echo '<span><img src="../photos/'.$trainer['photo'].'" alt="" /></span>';
+             echo '<span><h3>'.$trainer['name'].', '.$trainer['qualification'].'</h3></span>';
              echo '<span><button class="book-trainer">Book</button></span>';
              echo '</div>';  
           }
         ?>
       </div>
-    </div>
+    </div><div>
     <?php 
-        include 'components/footer.php';
+        include '../components/footer.php';
     ?>
+    </div>
