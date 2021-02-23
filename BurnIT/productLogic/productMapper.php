@@ -49,6 +49,7 @@ class ProdMapper extends DatabasePDOConfiguration
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
     public function insertProduct($prod)
     {
         $this->query = "insert into product (prodEmri, prodPhoto,prodCmimi,prodType) values(:emri,:photo,:cmimi,:type)";
@@ -63,6 +64,26 @@ class ProdMapper extends DatabasePDOConfiguration
         $statement->bindParam(":type", $type); 
         $statement->execute();
     }
+
+    public function updateProd($prodId,$prodName,$prodPrice,$prodType)
+    {
+        $this->query = "update product set prodEmri=:prodEmri,prodCmimi=:prodCmimi,prodType=:prodType where prodid=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $prodId);
+        $statement->bindParam(":prodEmri",$prodName);
+        $statement->bindParam(":prodCmimi",$prodPrice);
+        $statement->bindParam(":prodType",$prodType);
+        $statement->execute();
+    }
+    public function updateProdPhoto($prodId,$prodPhoto)
+    {
+         $this->query = "update product set prodPhoto=:prodPhoto where prodid=:id";
+         $statement = $this->conn->prepare($this->query);
+         $statement->bindParam(":id", $prodId);
+         $statement->bindParam(":prodPhoto",$prodPhoto);
+         $statement->execute();
+    }
+
     public function deleteProd($prodId)
     {
         $this->query = "delete from product where prodid=:id";

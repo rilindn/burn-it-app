@@ -32,6 +32,26 @@ class TrainerMapper extends DatabasePDOConfiguration{
         $statement->bindParam(":qualification",$qualification);
         $statement->execute();
     }
+
+    public function updateTrainer($trainerId,$trainerName,$trainerAge,$trainerQualification)
+    {
+        $this->query = "update trainer set name=:name,age=:age,qualification=:qualification where trainerid=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $trainerId);
+        $statement->bindParam(":name",$trainerName);
+        $statement->bindParam(":age",$trainerAge);
+        $statement->bindParam(":qualification",$trainerQualification);
+        $statement->execute();
+    }
+    public function updateTrainerPhoto($trainerId,$trainerPhoto)
+    {
+         $this->query = "update trainer set photo=:photo where trainerid=:id";
+         $statement = $this->conn->prepare($this->query);
+         $statement->bindParam(":id", $trainerId);
+         $statement->bindParam(":photo",$trainerPhoto);
+         $statement->execute();
+    }
+
     public function deleteTrainer($trainerId)
     {
         $this->query = "delete from trainer where trainerid=:trainerid";
