@@ -62,6 +62,16 @@ class UserMapper extends DatabasePDOConfiguration
         return $result;
     }
 
+    public function getAllUsersExcept($userId)
+    {
+        $this->query = "select * from user where userid!=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $userId);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function insertUser(\SimpleUser $user)
     {
         $this->query = "insert into User (userName, userEmail,userPassword,role) values (:username,:email,:pass,:role)";
@@ -77,6 +87,16 @@ class UserMapper extends DatabasePDOConfiguration
         $statement->execute();
     }
 
+    public function updateUser($userId,$userName,$userEmail)
+    {
+        $this->query = "update user set userName=:username,userEmail=:email where userid=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $userId);
+        $statement->bindParam(":username",$userName);
+        $statement->bindParam(":email", $userEmail);
+        $statement->execute();
+    }
+
     public function deleteUser($userId)
     {
         $this->query = "delete from user where userid=:id";
@@ -87,7 +107,7 @@ class UserMapper extends DatabasePDOConfiguration
 
     public function makeAdmin($userId)
     {
-        $this->query = "UPDATE user SET role='1' WHERE userid=:id";
+        $this->query = "update user set role='1' where userid=:id";
         $statement = $this->conn->prepare($this->query);
         $statement->bindParam(":id", $userId);
         $statement->execute();

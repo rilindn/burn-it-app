@@ -3,6 +3,16 @@
     ?>
     <head>
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    
+    <link
+      href="//db.onlinewebfonts.com/c/dbf69272e2482b8d0f1fc45d9f9a45b8?family=OitaW01-CondDemiItalic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-5.15.1-web/css/all.css"
+    />
     </head>
   <body>
     <div class="intro-div">

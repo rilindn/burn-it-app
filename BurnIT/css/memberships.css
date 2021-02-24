@@ -1,23 +1,3 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-@font-face {
-  font-family: 'OitaW01-CondDemiItalic';
-  src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot'); /* IE9*/
-  src: url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff2')
-      format('woff2'),
-    /* chrome firefox */
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.woff')
-      format('woff'),
-    /* chrome firefox */
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.ttf')
-      format('truetype'),
-    /* chrome firefox opera Safari, Android, iOS 4.2+*/
-      url('http://db.onlinewebfonts.com/t/dbf69272e2482b8d0f1fc45d9f9a45b8.svg#OitaW01-CondDemiItalic')
-      format('svg'); /* iOS 4.1- */
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -137,13 +117,14 @@ footer {
   align-items: center;
   font-size: 14pt;
 }
-.fa {
-  font-size: 25px !important;
+.fab {
+  font-size: 25px;
   width: 50px;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
-.fa:hover {
+.fab:hover {
   opacity: 0.7;
 }
 @media only screen and (max-width: 768px) {

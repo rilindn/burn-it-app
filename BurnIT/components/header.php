@@ -17,6 +17,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link
+      rel="stylesheet"
+      href="../fontawesome-free-5.15.1-web/css/all.css"
+    />
+    <link
       href="//db.onlinewebfonts.com/c/dbf69272e2482b8d0f1fc45d9f9a45b8?family=OitaW01-CondDemiItalic"
       rel="stylesheet"
       type="text/css"

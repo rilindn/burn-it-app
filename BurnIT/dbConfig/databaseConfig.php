@@ -23,22 +23,3 @@ class DatabasePDOConfiguration
 }
 
 
-class DatabaseMySQLiConfiguration
-{
-    private $connection;
-
-    private $host = "localhost";
-    private $username = "root";
-    private $dbName = "burnIt";
-    private $password = "";
-
-    public function __construct()
-    {
-        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->dbName);
-    }
-
-    protected function getConnection()
-    {
-        return $this->connection;
-    }
-}

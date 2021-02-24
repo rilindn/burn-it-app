@@ -21,10 +21,10 @@ $cartproducts =  $cartProd->getAllProducts();
 
     <div class="dash-selector">
       <ul>
-        <li id="clicker1" ><a href="" onclick="showDiv(1)" ><h4>User list</h4></a></li>
-        <li id="clicker2" ><a href="" onclick="showDiv(2)" ><h4>Product List</h4></a></li>
-        <li id="clicker3" ><a href="" onclick="showDiv(3)" ><h4>Cart Product List</h4></a></li>
-        <li id="clicker4" ><a href="" onclick="showDiv(4)" ><h4>Trainers</h4></a></li>
+        <li class="clicker" ><a href="" onclick="showDiv(1)" ><h4>User list</h4></a></li>
+        <li class="clicker" ><a href="" onclick="showDiv(2)" ><h4>Product List</h4></a></li>
+        <li class="clicker" ><a href="" onclick="showDiv(3)" ><h4>Cart Product List</h4></a></li>
+        <li class="clicker" ><a href="" onclick="showDiv(4)" ><h4>Trainers</h4></a></li>
         </ul>
     </div>
     <div class="inner-dash-container" >
@@ -40,18 +40,33 @@ $cartproducts =  $cartProd->getAllProducts();
             </thead>
             <tbody>
                 <?php
+                $count=0;
                 foreach ($userList as $user) {
                   if($user['role']==0){
-                    echo '<tr>';
+                    echo  '<tr>';
                     echo  '<td>'.$user['userName'].'</td>';
                     echo  '<td>'.$user['userEmail'].'</td>';
                     echo  '<td><a href= "../userLogic/promoteToAdmin.php?id='.$user['userid'].'">Promote</td>';
+                    echo  '<td name="editB"><a href= "" onclick="showEditForm('.$count++.')">Edit</td>';
                     echo  '<td><a href= "../userLogic/deleteUser.php?id='.$user['userid'].'">Delete</td>';
                     echo  '</tr>';
-                  }
+
+                    echo  '<tr id="editForm" name="editForm" style="display:none">';
+                    echo  '<form method="get" action="../userLogic/editUser.php" class="editForm">';
+                    echo  '<td style="display:none;"><input type="number" name="userid" value="'.$user['userid'].'"/></td>';
+                    echo  '<td><input class="editInput editInputName" type="text" name="edit-username" value="'.$user['userName'].'"/></td>';
+                    echo  '<td><input class="editInput" type="email" name="edit-useremail" value="'.$user['userEmail'].'"/></td>';
+                    echo  '<td id="emptyDiv"><input type="number" style="display:none" name="id" value="'.$user['role'].'"/></td>';
+                    echo  '<td colspan="2"> <a href=""><button type="submit" class="save-btn">Save</button></td>';
+                    echo  '</form>';
+                    echo  '</tr>';
+                    
+                  } 
                   
                 }
+                
                 ?>
+               
             </tbody>
           </table>
         </div>
@@ -75,7 +90,19 @@ $cartproducts =  $cartProd->getAllProducts();
                         echo  '<td><img class="list-photos" src="../photos/'.$product['prodPhoto'].'"/></td>';
                         echo  '<td>'.$product['prodCmimi'].' EUR</td>';
                         echo  '<td>'.$product['prodType'].'</td>';
+                        echo  '<td name="editB"><a href= "" onclick="showEditForm('.$count++.')">Edit</td>';
                         echo  '<td><a href= "../productLogic/deleteProduct.php?id='.$product['prodid'].'">Delete</td>';
+                        echo  '</tr>';
+
+                        echo  '<tr id="editForm" name="editForm" style="display:none">';
+                        echo  '<form method="get" action="../productLogic/editProd.php" class="editForm">';
+                        echo  '<td style="display:none;"><input type="number" name="id" value="'.$product['prodid'].'"/></td>';
+                        echo  '<td><input class="editInput editInputPName" style="width:250px" type="text" name="edit-name" value="'.$product['prodEmri'].'"/></td>';
+                        echo  '<td><input class="editInput editInputPrPhoto" style="width:75px;font-size:8pt;" type="file" name="edit-photo" value="../photos/'.$product['prodPhoto'].'"/></td>';
+                        echo  '<td><input class="editInput editInputCmimi" style="width:60px" type="number" name="edit-price" value="'.$product['prodCmimi'].'"/></td>';
+                        echo  '<td><input class="editInput editInputType" style="width:60px" type="text" name="edit-type" value="'.$product['prodType'].'"/></td>';
+                        echo  '<td colspan="2"> <a href=""><button type="submit" class="save-btn">Save</button></td>';
+                        echo  '</form>';
                         echo  '</tr>';
                       }
                     ?>
@@ -148,6 +175,8 @@ $cartproducts =  $cartProd->getAllProducts();
                         echo  '<td>'.$cProd['prodCmimi'].'</td>';
                         echo  '<td><a href= "../cartLogic/deleteFromCart.php?cartid='.$cProd['cartid'].'&&pageurl='.$_SERVER['PHP_SELF'].'">Delete</td>';
                         echo  '</tr>';
+
+                        
                   }
                 ?>
                   </tbody>
@@ -178,7 +207,19 @@ $cartproducts =  $cartProd->getAllProducts();
                     echo  '<td><img class="list-photos" src="../photos/'.$trainer['photo'].'"/></td>';
                     echo  '<td>'.$trainer['age'].'</td>';
                     echo  '<td>'.$trainer['qualification'].'</td>';
+                    echo  '<td name="editB"><a href= "" onclick="showEditForm('.$count++.')">Edit</td>';
                     echo  '<td><a href= "../trainerLogic/deleteTrainer.php?id='.$trainer['trainerid'].'">Delete</td>';
+                    echo  '</tr>';
+
+                    echo  '<tr id="editForm" name="editForm" style="display:none">';
+                    echo  '<form method="get" action="../trainerLogic/editTrainer.php" class="editForm">';
+                    echo  '<td style="display:none;"><input type="number" name="id" value="'.$trainer['trainerid'].'"/></td>';
+                    echo  '<td><input class="editInput editInputTName" style="width:55px" type="text" name="edit-name" value="'.$trainer['name'].'"/></td>';
+                    echo  '<td><input class="editInput editInputPrPhoto" style="width:75px;font-size:8pt;" type="file" name="edit-photo" /></td>';
+                    echo  '<td><input class="editInput editInputTAge" style="width:40px" type="number" name="edit-age" value="'.$trainer['age'].'"/></td>';
+                    echo  '<td><input class="editInput editInputTQ" style="width:110px" type="text" name="edit-qualification" value="'.$trainer['qualification'].'"/></td>';
+                    echo  '<td colspan="2"> <a href=""><button type="submit" class="save-btn">Save</button></td>';
+                    echo  '</form>';
                     echo  '</tr>';
                   
                 }
